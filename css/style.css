@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+body {
+    font-size: small;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    background: #1d2630;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    height: 100vh;
+    object-fit: cover;
+}
+
+#Update {
+    display: none;
+}
+
+@media(max-width: 414px) {
+    .h2 {
+        margin-top: 1.5rem !important;
+    }
+}
