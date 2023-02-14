@@ -91,7 +91,11 @@ function deleteItem(index) {
 function updateData(index) {
         newData = JSON.parse(localStorage.getItem('arrPost'));
         let updateText = prompt('Введите текст');
-        newData[index].text = updateText;
-        localStorage.setItem('arrPost', JSON.stringify(newData));
+        if (updateText === '' || updateText == null) {
+            return;
+        } else {
+            newData[index].text = updateText;
+            localStorage.setItem('arrPost', JSON.stringify(newData));
+        }
         showData();
 }
