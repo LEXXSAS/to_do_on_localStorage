@@ -29,6 +29,10 @@ img {
     display: none;
 }
 
+.table>tbody {
+    vertical-align: middle;
+}
+
 @media(max-width: 414px) {
     .h2 {
         margin-top: 1.5rem !important;
