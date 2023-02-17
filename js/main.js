@@ -1,4 +1,4 @@
-let btn = document.querySelector('.btnadd');
+let btn = document.querySelector('.btn-add');
 let btnDelete = document.querySelector('.btndelete');
 let div = document.querySelector('.div');
 class Post {
@@ -32,17 +32,23 @@ function showData() {
     let html = '';
 
     arrPost.forEach(function (element, index) {
-        html += '<tr>';
-        html += '<td>' + element.text + '</td>';
-        html += 
-        '<td><button onclick="deleteItem(' +
-         index + 
-         ')" class="btn btn-danger">Удалить</button><button onclick="updateData(' + 
-         index + 
-         ')" class="btn btn-warning m-2 update" id="edit">Изменить</button></td>';
-         html += "</tr>";
+        let ind = index;
+        let el = element.text;
+        html += `<tr>
+        <!-- <th>дело #${ind + 1}</th> -->
+        <td data-title="Текст">
+            <p class="border-text">
+            ${el}
+            </p>
+        </td>
+        <td class="btn-right" data-title="Действия">
+            <button onclick="deleteItem(${ind})" class="btn btn-danger btn-sm">Удалить</button>
+            <button onclick="updateData(${ind})" class="btn btn-warning btn-sm update" id="edit">Изменить</button>
+        </td>
+    </tr>`;
+    console.log(element.text)
     });
-    document.querySelector('#crudTable tbody').innerHTML = html;
+    document.querySelector('#crudTable').innerHTML = html;
 }
 
 document.onload = showData();
@@ -67,11 +73,12 @@ btn.addEventListener('click', () => {
         });
         localStorage.setItem('arrPost', JSON.stringify(arrPost));
         showData();
-        arrPost.forEach(function (element, index) {
-            console.log(element)
-        });
+        // arrPost.forEach(function (element, index) {
+        //     console.log(element)
+        // });
      }
 })
+
 function deleteItem(index) {
     let arrPost;
     if(localStorage.getItem('arrPost') == null) {
@@ -82,9 +89,9 @@ function deleteItem(index) {
 
     arrPost.splice(index, 1);
     localStorage.setItem('arrPost', JSON.stringify(arrPost));
-    arrPost.forEach((element) => {
-        console.log(element)
-    });
+    // arrPost.forEach((element) => {
+    //     console.log(element)
+    // });
     showData();
 }
  
