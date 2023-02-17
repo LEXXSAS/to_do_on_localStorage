@@ -3,38 +3,125 @@
     padding: 0;
     user-select: none;
     box-sizing: border-box;
-    color: #fff;
 }
 
 html {
     scroll-behavior: smooth;
-
 }
 
 body {
-    font-size: small;
-    height: 100vh;
+    display: flex;
+    font-size: 14px;
+    min-height: 100vh;
     font-family: 'Open Sans', sans-serif;
-    background: #1d2630;
-}
-
-img {
-    width: 100%;
-    height: auto;
-    height: 100vh;
-    object-fit: cover;
-}
-
-#Update {
-    display: none;
 }
 
 .table>tbody {
     vertical-align: middle;
 }
 
-@media(max-width: 414px) {
-    .h2 {
-        margin-top: 1.5rem !important;
+.table>:not(caption)>*>* {
+    display: flex;
+    align-items: center;
+    /* gap: 5px; */
+}
+.table-wrapper {
+    margin: 0 auto;
+    padding: 2%;
+    width: 100%;
+    /* width: 100vw; */
+}
+#no-more-tables td {
+    border: none;
+    padding: 10px;
+}
+#no-more-tables tr {
+    border: none;
+    border-bottom: 1px solid #eee;
+}
+.bg-light {
+    --bs-bg-opacity: 0;
+}
+p {
+    padding: 0;
+    margin: 0;
+}
+.border-text {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 12px;
+    margin-bottom: -10px;
+}
+th {
+    font-size: 16px;
+}
+h3 {
+    padding: 10px;
+}
+.btn:not(:nth-child(1)) {
+    margin-left: 5px;
+}
+.btn {
+    width: 100px;
+    /* padding: 5px 15px; */
+}
+.btn-primary {
+    font-size: 14px;
+    width: 100px;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+#no-more-tables-top {
+    margin-left: 10px;
+    padding-bottom: 10px;
+    /* padding-bottom: 1rem; */
+}
+/* .btn-right {
+    justify-content: flex-end;
+} */
+/* tr:not(:first-child) {
+    display: flex;
+    flex-wrap: wrap;
+} */
+@media only screen and (max-width: 800px) {
+    h4 {
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 415px) {
+    h3 {
+        font-size: 1.5rem;
+    }
+    .btn {
+        padding: 4px 10px;
+        width: 100%;
+        /* width: 33.3%; */
+    }
+    .btn-right {
+        justify-content: flex-start;
+    }
+    .btn-primary {
+        width: calc(50% - 8px);
+    }
+}
+
+@media (max-width: 360px) {
+    h3 {
+        font-size: 1.4rem;
+    }
+    .btn {
+        padding: 4px 10px;
+        /* width: 33.3%; */
+        /* width: 100%; */
+    }
+}
+
+@media (max-width: 340px) {
+    h3 {
+        font-size: 1.3rem;
+    }
+    .btn {
+        padding: 4px 10px;
     }
 }
